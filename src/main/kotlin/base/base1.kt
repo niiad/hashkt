@@ -77,3 +77,31 @@ tailrec fun tailRecursiveFactorial(number: Int, accumulator: Long = 1): Long {
     }
 }
 
+/**
+ * checks if a given string is a valid url
+ *
+ * @param url the given string
+ * @return 'true' if the given string is a valid url, 'false' otherwise
+ * */
+fun isValidURL(url: String) : Boolean {
+    if (url.isEmpty()) {
+        return false
+    }
+
+    if (!url.contains("://")) {
+        return false
+    }
+
+    val schemes = listOf("http://", "https://", "ftp://")
+
+    val isFound = schemes.any { scheme ->
+        url.startsWith(scheme)
+    }
+
+    if (!isFound) {
+        return false
+    }
+
+    return true
+}
+
