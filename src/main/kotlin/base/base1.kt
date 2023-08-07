@@ -98,10 +98,6 @@ fun isValidURL(url: String) : Boolean {
         url.startsWith(scheme)
     }
 
-    if (!isFound) {
-        return false
-    }
-
-    return true
+    return isFound
 }
 
